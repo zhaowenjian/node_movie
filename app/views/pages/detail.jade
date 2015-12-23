@@ -1,0 +1,22 @@
+extend ../layout
+
+block content
+	.container
+		.row
+			.col-md-7
+				embed(src="#{movie.flash}", allowFullScreen="true", quality="high", width="600", height="480", allowScriptAccess="always", type="application/x-shockwave-flash")
+			.col-md-5
+				dl.dl-horizontal
+					dt 片名：
+					dd #{movie.name}
+					dt 导演:
+					dd #{movie.doctor}
+					dt 国家
+					dd #{movie.country}
+					dt 上映时间:
+					dd #{movie.year}
+					dt 语言：
+					dd #{movie.language}
+					dt 简介：
+					dd #{movie.summary}
+					

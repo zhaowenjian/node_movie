@@ -1,0 +1,14 @@
+extend ../layout
+
+block content
+	.container
+		.row
+			each movie in movies
+				.col-md-2
+					.thumbnail
+						a(href="/movie/#{movie._id}")
+							img(src="#{movie.poster}")
+						.caption
+							h4 
+								strong #{movie.name}
+							p: a.btn.btn-danger(href="/movie/#{movie._id}") PLAY

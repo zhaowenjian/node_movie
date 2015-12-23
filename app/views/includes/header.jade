@@ -1,0 +1,52 @@
+.container
+	.row
+		.page-header.clearfix
+			h1 #{title}
+			.col-md-4
+				small foreve_
+.navbar.navbar-default.navbar-fixed-bottom
+	.container
+		.navbar-header
+			a.navbar-brand(href="/") 
+				strong 要拥有，必先懂失去怎接受……
+			if user
+				p.navbar-text.navbar-right
+					span welcome to u : #{user.name} ...
+					span &nbsp;|&nbsp;
+					a.navbar-link(href="/user/logout") LogOut
+			else 
+				p.navbar-text.navbar-right
+					a(href="#", data-toggle="modal", data-target="#signinModal") SignIn
+					span &nbsp;|&nbsp;
+					a(href="#", data-toggle="modal", data-target="#signupModal") SignUp
+#signinModal.modal.fade
+	.modal-dialog
+		.modal-content
+			form(method="POST", action="/user/signIn")
+				.modal-header Sign In
+				.modal-body
+					.form-group
+						label(for="userName") Name:
+						input#userName.form-control(name="user[name]")
+					.form-group
+						label(for="userPasserword") Password:
+						input#userPasserword.form-control(name="user[password]")
+					.modal-footer
+						button.btn.btn-default(type='button',data-dismiss='modal') Cancel
+						button.btn.btn-success(type='submit') Submit
+#signupModal.modal.fade
+	.modal-dialog
+		.modal-content
+			form(method="POST", action="/user/signUp")
+				.modal-header Sign Up
+				.modal-body
+					.form-group
+						label(for="userName") Name:
+						input#userName.form-control(name="user[name]")
+					.form-group
+						label(for="userPasserword") Password:
+						input#userPasserword.form-control(name="user[password]")
+					.modal-footer
+						button.btn.btn-default(type='button',data-dismiss='modal') Cancel
+						button.btn.btn-success(type='submit') Submit
+						

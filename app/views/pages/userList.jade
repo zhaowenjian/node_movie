@@ -1,0 +1,29 @@
+extend ../layout
+
+block content
+	.container
+		.row
+			table.table.table-hover
+				caption 
+				thead
+					tr
+						th 姓名
+						th 权限
+						th 录入时间
+						th 更新时间
+						th View
+						th Update
+						th Delete
+				tbody
+					each item in users
+						tr(class="item-id-#{item._id}") 
+							td #{item.name}
+							td #{item.role}
+							//-td #{moment().format("MM-DD-YYYY")}
+							td #{moment(item.meta.createAt).format("MM-DD-YYYY")}
+							td #{moment(item.meta.updateAt).format("MM-DD-YYYY")}
+							td: a(target="_blank", href="/movie/#{item._id}") View
+							td: a(target="_blank", href="/admin/movie/update/#{item._id}") Update
+							td
+								button.btn.btn-danger.del(type="button", data-id="#{item._id}") Delete
+	script(src="/js/admin.js")

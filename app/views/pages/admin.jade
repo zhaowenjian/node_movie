@@ -1,0 +1,47 @@
+extend ../layout
+
+block content
+	.container
+		.row
+			label.col-md-4(for="idInput") 豆瓣ID
+			.col-md-8
+				input#idInput.form-control(type="text")
+			form(method="POST",action="/admin/movie/new")
+				if movie._id
+					.form-group
+						input(type="hidden", name="movie[_id]", value=movie._id)
+				.form-group
+					label.col-md-4.control-label(for="nameInput") 片名
+					.col-md-8
+						input#nameInput.form-control( type="text",name="movie[name]", value=movie.name)
+				.form-group
+					label.col-md-4.control-label(for="doctorInput") 导演
+					.col-md-8
+						input#doctorInput.form-control( type="text",name="movie[doctor]", value=movie.doctor)
+				.form-group
+					label.col-md-4.control-label(for="countryInput") 国家
+					.col-md-8
+						input#countryInput.form-control( type="text",name="movie[country]", value=movie.country)
+				.form-group
+					label.col-md-4.control-label(for="languageInput") 语言
+					.col-md-8
+						input#languageInput.form-control( type="text",name="movie[language]", value=movie.language)
+				.form-group
+					label.col-md-4.control-label(for="yearInput") 上映年份
+					.col-md-8
+						input#yearInput.form-control( type="text",name="movie[year]", value=movie.year)
+				.form-group
+					label.col-md-4.control-label(for="posterInput") 海报地址
+					.col-md-8
+						input#posterInput.form-control( type="text",name="movie[poster]", value=movie.poster)
+				.form-group
+					label.col-md-4.control-label(for="flashInput") flash地址
+					.col-md-8
+						input#flashInput.form-control( type="text",name="movie[flash]", value=movie.flash)
+				.form-group
+					label.col-md-4.control-label(for="summaryInput") 简介
+					.col-md-8
+						input#summaryInput.form-control( type="text",name="movie[summary]", value=movie.summary)
+				.form-group
+					button.btn.btn-danger(type="submit") SUBMIT
+	script(src="/js/admin.js")
