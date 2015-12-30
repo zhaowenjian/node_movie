@@ -16,6 +16,7 @@ var models_path = __dirname + '/app/models'
 var mongoose = require('mongoose')
 //var Movie = require('./app/models/movie') 
 require('./app/models/movie')
+require('./app/models/comment')
 
 //body-parser
 var bodyParser = require('body-parser')
@@ -63,7 +64,7 @@ app.use(session({
 }))
 
 app.listen( PORT, function(){
-    console.log('Server listening at 3000....')
+    console.log('Server listening at ' + PORT + '.....')
 });
 
 require('./config/route.js')(app)

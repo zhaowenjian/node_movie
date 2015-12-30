@@ -4,6 +4,7 @@ var Movie = require("../app/models/movie")
 var Index = require("../app/controllers/index")
 var Movie = require("../app/controllers/movie")
 var User = require("../app/controllers/user")
+var Comment = require("../app/controllers/comment")
 
 module.exports = function(app){
 
@@ -43,6 +44,8 @@ module.exports = function(app){
     app.post( '/user/signUp', User.signUp)
     //logout
     app.get( '/user/logout', User.logout)
-    
+
+//comment
+    app.post( '/admin/comment', User.loginRequired, Comment.save)
 }
 

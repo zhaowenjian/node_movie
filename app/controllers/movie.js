@@ -1,7 +1,9 @@
 
 var mongoose = require('mongoose')
 var Movie = mongoose.model('Movie')
+var Comment = require('../models/comment')
 var _ = require('underscore')
+
 
 exports.new = function( req, res){
     res.render( 'admin', {
@@ -42,10 +44,23 @@ exports.detail = function( req, res){
         if(err){
             console.log(err)
         }
-        res.render( 'detail', {
-            title: 'Detail ' + _id + '....',
-            movie: movie
-        })
+        Comment
+            .find({movie: _id})
+            .populate( 'from', 'name')
+            .exec(function( err, comments){
+
+            console.log('comments : ')
+            console.log(comments)
+                res.render( 'detail', {
+                    title: 'Detail ' + _id + '....',
+                    movie: movie,
+                    comments: comments
+                })
+
+            })
+        
+
+        
     })
 }
 
