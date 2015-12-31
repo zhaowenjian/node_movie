@@ -47,6 +47,7 @@ exports.detail = function( req, res){
         Comment
             .find({movie: _id})
             .populate( 'from', 'name')
+            .populate( 'reply.from reply.to', 'name')
             .exec(function( err, comments){
 
             console.log('comments : ')

@@ -22,7 +22,7 @@ var commentSchema = new Schema({
             },
             content: String,
             meta: {
-                crateAt: {
+                createAt: {
                     type: Date,
                     default: Date.now()
                 }
