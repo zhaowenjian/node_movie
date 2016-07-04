@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>energy</title>
+	<script type="text/javascript" src="./js/underscore.js"></script>
+	<script type="text/javascript">
+
+	var arr01 = [1, 2, 3, 4, 5, 6, 7 , 8, 9, 10];
+
+	function test(fun){
+
+		for(var i = 0; i < 100; ++i){
+			console.log("run")
+			fun();
+		}
+
+	}
+
+	function fun01(){
+		_.sortBy(arr01, function(num){
+			return Math.sin(num);
+		})
+	}
+	</script>
+</head>
+<body>
+	
+	<button onclick="test(fun01)">Test_sortBy</button>
+</body>
+</html>
