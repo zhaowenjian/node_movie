@@ -7,8 +7,7 @@ $(function(){
 
         var toId = target.data('tid')
         var commentId = target.data('cid')
-console.log('toId : ' + toId)
-console.log('commentId : ' + commentId)
+
         target.parents('.media-body').attr( 'id', 'mediaBody')
 
         if($('#cId').length > 0){
