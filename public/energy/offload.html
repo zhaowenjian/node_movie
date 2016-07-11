@@ -143,6 +143,23 @@
             resTime = current - start;
             insertTable(event.data);
 
+            if(bub <= 100000){
+                if(cnt < 3){
+                    setTimeout(function(){
+                        start = Date.now();
+                        worker.postMessage(bub);
+                    }, 3000);
+                    cnt ++;
+                } else{
+                    bub += 5000;
+                    cnt = 0;
+                    setTimeout(function(){
+                        start = Date.now();
+                        worker.postMessage(bub);
+                    }, 3000);
+                }
+            }
+
         }
     }
 
