@@ -110,7 +110,7 @@
     var tbody = document.getElementsByTagName("tbody")[0];
     var showData = document.getElementById("showData");
     var start, current,resTime;
-    var bub = 1000, cnt = 0;
+    var bub = 5000, cnt = 0;
 
     function request(paras) {
         var url = location.href;
@@ -138,22 +138,7 @@
             resTime = current - start;
             insertTable(event.data);
 
-            if(bub <= 100000){
-                if(cnt < 3){
-                    setTimeout(function(){
-                        start = Date.now();
-                        worker.postMessage(bub);
-                    }, 3000);
-                    cnt ++;
-                } else{
-                    bub += 1000;
-                    cnt = 0;
-                    setTimeout(function(){
-                        start = Date.now();
-                        worker.postMessage(bub);
-                    }, 3000);
-                }
-            }
+            
         }
     }
 
