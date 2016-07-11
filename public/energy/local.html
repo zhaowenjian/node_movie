@@ -110,7 +110,7 @@
     var tbody = document.getElementsByTagName("tbody")[0];
     var showData = document.getElementById("showData");
     var start, current,resTime;
-    var fib = 30, cnt = 0;
+    var bub = 1000, cnt = 0;
 
     function request(paras) {
         var url = location.href;
@@ -138,22 +138,22 @@
             resTime = current - start;
             insertTable(event.data);
 
-            /*if(fib <= 40){
-                if(cnt < 10){
+            if(bub <= 100000){
+                if(cnt < 3){
                     setTimeout(function(){
                         start = Date.now();
-                        worker.postMessage(fib);
+                        worker.postMessage(bub);
                     }, 3000);
                     cnt ++;
                 } else{
-                    fib ++;
+                    bub += 1000;
                     cnt = 0;
                     setTimeout(function(){
                         start = Date.now();
-                        worker.postMessage(fib);
+                        worker.postMessage(bub);
                     }, 3000);
                 }
-            }*/
+            }
         }
     }
 
