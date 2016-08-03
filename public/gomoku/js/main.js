@@ -48,8 +48,10 @@ function AIPlayer(t, e, n) {
                 case "decision":
                     //*********************
                     onDate = Date.now();
+                    resTime = onDate - postDate;
                     console.log("step" + step + "decision resTime: " + resTime + "; runTime :" + t.data.runTime);
-                    ws.send(JSON.stringify({cmd:100, data: {resTime: resTime, runTime: t.data.runTime}}));
+                    ws.send(JSON.stringify({cmd:100, data: {step: step, resTime: resTime, runTime: t.data.runTime}}));
+                    step++;
                     //********************
                     o.computing = !1,
                         o.cancel > 0 ? o.cancel-- : o.setGo(t.data.r, t.data.c);
