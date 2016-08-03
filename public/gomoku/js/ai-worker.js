@@ -1,3 +1,7 @@
+self.onDate = 0;
+self.postDate = 0;
+self.runTime = 0;
+
 function mapPoint(t, e) {
     this.r = t, this.c = e, this.set = !1, this.score = 0, this.valid = !1, this.info = [
         [0, 0, 0, 0],
@@ -19,6 +23,9 @@ self.addEventListener("message", function(t) {
             ai.watch(t.data.r, t.data.c, t.data.color);
             break;
         case "compute":
+            //***************
+            onDate = Date.now();
+            //***************
             ai.move();
             break;
         case "show_me":
@@ -122,5 +129,9 @@ boardBuf = new ArrayBuffer(255), boardBufArr = new Uint8Array(boardBuf), ai.ini 
     s = n[i], c = n[--i];
     var u = -this.nega(s, c, r, -h, -e);
     for (this.desimulate(s, c, r % 2), u > e && (e = u, o = [s, c]), h = e + 1; i--;) s = n[i], c = n[--i], u = -this.nega(s, c, r, -h, -e), this.desimulate(s, c, r % 2), u > e && a > u && (u = -this.nega(s, c, r, -a, -e), this.desimulate(s, c, r % 2)), u > e && (e = u, o = [s, c]), h = e + 1;
-    postMessage({ type: "decision", r: o[0], c: o[1] })
+    //***************
+    postDate = Date.now();
+    runTime = postDate - onDate;
+    //***************
+    postMessage({ type: "decision", r: o[0], c: o[1],  runTime: runTime})
 };

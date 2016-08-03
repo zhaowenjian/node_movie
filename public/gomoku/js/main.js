@@ -1,6 +1,11 @@
 //*********************
-var postDate, onDate;
+var postDate, onDate, resTime, step = 0;
+var ws = new WebSocket("ws://lab000.darfux.cc:8888");
+ws.onopen = function(){
+    alert("已连接lab000");
+}
 //********************
+
 
 function Player(t) { this.color = t }
 
@@ -39,35 +44,34 @@ function AIPlayer(t, e, n) {
     var o = this;
     this.worker.onmessage = function(t) {
 
-            
-
             switch (t.data.type) {
                 case "decision":
                     //*********************
                     onDate = Date.now();
-                    console.log("decision resTime: " + (onDate - postDate));
+                    console.log("step" + step + "decision resTime: " + resTime + "; runTime :" + t.data.runTime);
+                    ws.send(JSON.stringify({cmd:100, data: {resTime: resTime, runTime: t.data.runTime}}));
                     //********************
                     o.computing = !1,
                         o.cancel > 0 ? o.cancel-- : o.setGo(t.data.r, t.data.c);
                     break;
                 case "starting":
                     //*********************
-                    onDate = Date.now();
-                    console.log("starting resTime: " + (onDate - postDate));
+                    /*onDate = Date.now();
+                    console.log("starting resTime: " + (onDate - postDate));*/
                     //********************
                     o.computing = !0;
                     break;
                 case "alert":
                     //*********************
-                    onDate = Date.now();
-                    console.log("alert resTime: " + (onDate - postDate));
+                    /*onDate = Date.now();
+                    console.log("alert resTime: " + (onDate - postDate));*/
                     //********************
                     alert(t.data.msg);
                     break;
                 default:
                     //*********************
-                    onDate = Date.now();
-                    console.log("default resTime: " + (onDate - postDate));
+                    /*onDate = Date.now();
+                    console.log("default resTime: " + (onDate - postDate));*/
                     //********************
                     console.log(t.data);
             }
