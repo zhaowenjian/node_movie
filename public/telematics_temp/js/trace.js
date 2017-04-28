@@ -360,10 +360,10 @@ window.onload = function(){
 					var circle=new qq.maps.Circle({
 					       	map:map,
 					       	center: point,
-					       	radius: 4,
+					       	radius: 5.5,
 					       	fillColor: circleColor,
-					       	strokeColor: circleStrokeColor,
-					       	strokeWeight:6
+					       	strokeColor: circleColor,
+					       	strokeWeight:1
 					   	});
 
 					pathTemp.push(point);
