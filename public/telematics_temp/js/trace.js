@@ -322,7 +322,7 @@ window.onload = function(){
 		var map = new qq.maps.Map(document.getElementById('container'),
 		{
 		    center:center,
-		    zoom: 16,
+		    zoom: 18,
 		});
 
 		qq.maps.event.addListener(map, 'tilesloaded', function(){
@@ -363,7 +363,9 @@ window.onload = function(){
 					       	radius: 3,
 					       	fillColor: circleColor,
 					       	strokeColor: circleColor,
-					       	strokeWeight:1
+					       	strokeWeight:1,
+					       	editable:false
+
 					   	});
 
 					pathTemp.push(point);
