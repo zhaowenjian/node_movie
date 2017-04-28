@@ -342,7 +342,7 @@ window.onload = function(){
 				var polyline = new qq.maps.Polyline({
 				    strokeColor: polylineColor,
 				    strokeWeight: 11,
-				    editable:false,
+				    editable:true,
 				    map: map
 				});
 
