@@ -1,0 +1,10 @@
+INSERT INTO user (id,nickname) VALUES (1,"Preston"),(2,"Jesse"),(3,"Avram"),(4,"Odysseus"),(5,"Gil"),(6,"Gregory"),(7,"Chandler"),(8,"Amir"),(9,"Merritt"),(10,"Connor");
+INSERT INTO user (id,nickname) VALUES (11,"Xanthus"),(12,"Mufutau"),(13,"Nigel"),(14,"Colby"),(15,"Alden"),(16,"Tucker"),(17,"Kelly"),(18,"Arden"),(19,"Andrew"),(20,"Leonard");
+INSERT INTO user (id,nickname) VALUES (21,"Bradley"),(22,"Neville"),(23,"Vernon"),(24,"Gray"),(25,"Harper"),(26,"Alden"),(27,"Amos"),(28,"Callum"),(29,"Keith"),(30,"Trevor");
+INSERT INTO user (id,nickname) VALUES (31,"Cadman"),(32,"Damon"),(33,"Ira"),(34,"Forrest"),(35,"Wylie"),(36,"Cooper"),(37,"Kadeem"),(38,"Justin"),(39,"Wade"),(40,"Keefe");
+INSERT INTO user (id,nickname) VALUES (41,"Kaseem"),(42,"Nehru"),(43,"Aaron"),(44,"Wang"),(45,"Jin"),(46,"Avram"),(47,"Carl"),(48,"Jin"),(49,"Travis"),(50,"Todd");
+INSERT INTO user (id,nickname) VALUES (51,"Ulysses"),(52,"Donovan"),(53,"Bevis"),(54,"Levi"),(55,"Mohammad"),(56,"Dominic"),(57,"Marshall"),(58,"Martin"),(59,"Warren"),(60,"Alan");
+INSERT INTO user (id,nickname) VALUES (61,"Seth"),(62,"Caesar"),(63,"Wayne"),(64,"Rashad"),(65,"Dennis"),(66,"Baker"),(67,"Raja"),(68,"Kennedy"),(69,"Nasim"),(70,"Adrian");
+INSERT INTO user (id,nickname) VALUES (71,"Igor"),(72,"Merrill"),(73,"Lane"),(74,"Gil"),(75,"Burton"),(76,"Basil"),(77,"Kieran"),(78,"Blaze"),(79,"Adrian"),(80,"Nathaniel");
+INSERT INTO user (id,nickname) VALUES (81,"Hoyt"),(82,"Trevor"),(83,"Herrod"),(84,"Adam"),(85,"Flynn"),(86,"Russell"),(87,"Mufutau"),(88,"Dalton"),(89,"Hector"),(90,"Nash");
+INSERT INTO user (id,nickname) VALUES (91,"Cole"),(92,"Dorian"),(93,"Kareem"),(94,"Sylvester"),(95,"Alexander"),(96,"Tanek"),(97,"Francis"),(98,"Murphy"),(99,"Hedley"),(100,"Zane");
