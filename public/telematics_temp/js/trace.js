@@ -362,7 +362,7 @@ window.onload = function(){
 					       	center: point,
 					       	radius: 4,
 					       	fillColor: circleColor,
-					       	strokeColor: strokeColor,
+					       	strokeColor: circleStrokeColor,
 					       	strokeWeight:6
 					   	});
 
