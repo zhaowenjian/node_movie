@@ -339,8 +339,6 @@ window.onload = function(){
 
 				var circleStrokeColor = new qq.maps.Color(0,0,0,1);
 
-
-
 				var polyline = new qq.maps.Polyline({
 				    strokeColor: polylineColor,
 				    strokeWeight: 11,
@@ -357,17 +355,7 @@ window.onload = function(){
 				var idx = 0;
 				var pathTemp = [];
 
-				polyline.setPath(path);
-				var circle=new qq.maps.Circle({
-					       	map:map,
-					       	center: path[0],
-					       	radius: 3,
-					       	fillColor: "#0f0",
-					       	strokeColor: circleStrokeColor,
-					       	strokeWeight:1
-					   	});
-
-				/*var pathInterval = setInterval(function(){
+				var pathInterval = setInterval(function(){
 					var point = path[idx++];
 					var circle=new qq.maps.Circle({
 					       	map:map,
@@ -384,7 +372,7 @@ window.onload = function(){
 					if(idx == len + 1){
 						clearInterval(pathInterval);
 					}
-				}, 200);*/
+				}, 200);
 			}
 
 			FIRST_LOAD = false;
