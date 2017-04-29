@@ -360,7 +360,7 @@ window.onload = function(){
 					var circle=new qq.maps.Circle({
 					       	map:map,
 					       	center: point,
-					       	radius: 7,
+					       	radius: 8,
 					       	fillColor: circleColor,
 					       	strokeColor: circleColor,
 					       	strokeWeight:1,
