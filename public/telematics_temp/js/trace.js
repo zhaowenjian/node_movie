@@ -322,7 +322,7 @@ window.onload = function(){
 		var map = new qq.maps.Map(document.getElementById('container'),
 		{
 		    center:center,
-		    zoom: 18,
+		    zoom: 16,
 		});
 
 		qq.maps.event.addListener(map, 'tilesloaded', function(){
@@ -360,7 +360,7 @@ window.onload = function(){
 					var circle=new qq.maps.Circle({
 					       	map:map,
 					       	center: point,
-					       	radius: 3,
+					       	radius: 5,
 					       	fillColor: circleColor,
 					       	strokeColor: circleColor,
 					       	strokeWeight:1,
