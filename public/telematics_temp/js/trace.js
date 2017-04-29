@@ -342,7 +342,7 @@ window.onload = function(){
 				var polyline = new qq.maps.Polyline({
 				    strokeColor: polylineColor,
 				    strokeWeight: 11,
-				    editable:true,
+				    editable:false,
 				    map: map
 				});
 
@@ -370,6 +370,11 @@ window.onload = function(){
 
 					pathTemp.push(point);
 					polyline.setPath(pathTemp);
+
+					//移动地图中心点
+					if(idx % 10 == 0){
+						map.panTo(point);
+					}
 
 					if(idx == len + 1){
 						clearInterval(pathInterval);
